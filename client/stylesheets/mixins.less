@@ -1,0 +1,26 @@
+// MIXINS
+
+
+.transition(@values: all 0.2s ease) {
+  -webkit-transition: @values;
+  -moz-transition: @values;
+  transition: @values;
+}
+
+.animatedDuration(@time) {
+  -webkit-animation-duration: @time;
+  -moz-animation-duration: @time;
+  animation-duration: @time;
+}
+
+.animatedDelay(@time) {
+  -webkit-animation-delay: @time;
+  -moz-animation-delay: @time;
+  animation-delay: @time;
+}
+
+.transform(@method) {
+  transform: @method;
+  -ms-transform: @method;
+  -webkit-transform: @method;
+}
