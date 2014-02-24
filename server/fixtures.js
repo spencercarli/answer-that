@@ -1,5 +1,9 @@
 Meteor.startup(function(){
 	if (Questions.find().count() === 0){
+		Meteor.users.insert({
+			email: 'a@a.com'
+		});
+
 		Questions.insert({
 			question: "How old would you be if you didn't know how old you are?",
 			submitted: new Date()
