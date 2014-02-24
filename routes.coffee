@@ -5,6 +5,9 @@ Router.map ->
   @route 'dashboard',
     path: '/dashboard'
 
+  @route 'successfulSignup',
+    path: '/success'
+
   @route 'notFound',
     path: '*'
     where: 'server'
