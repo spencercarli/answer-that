@@ -1,8 +1,14 @@
-emailUser = function(){
+emailUsers = function(question){
 	Meteor.users.find().forEach(function(user){
-		var userEmails = user.emails;
+		var address = user.emails[0].address;
 
-		console.log(userEmails[0]);
+		Email.send({
+			to: address,
+			from: 'spencer@handlebarlabs.com',
+			subject: 'New Question from Answer That',
+			html: "<h3>Time for a new question from Answer That...</h3> \n" + "<p>" + question + "</p>"
+		});
+
 	});
 }
 
@@ -12,7 +18,8 @@ Fiber = Npm.require('fibers');
 setInterval(function(){
 
 	Fiber(function(){
-		emailUser();
+		var question = Questions.findOne();
+		emailUsers(question.question);
 	}).run();
 
-}, 2000);
+}, 20000);
