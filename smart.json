@@ -4,6 +4,7 @@
     "accounts-entry": {},
     "handlebars-server": {},
     "simple-form": {},
-    "headers": {}
+    "headers": {},
+    "bootstrap-3": {}
   }
 }
