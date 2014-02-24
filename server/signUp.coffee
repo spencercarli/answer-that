@@ -5,6 +5,6 @@ Meteor.methods {
 		x = Accounts.createUser {
 			email: email
 		}
-		console.log 'success'
+		console.log x
 		
 }

@@ -1,6 +1,6 @@
 Meteor.startup(function(){
 	if (Questions.find().count() === 0){
-		Meteor.users.insert({
+		Accounts.createUser({
 			email: 'a@a.com'
 		});
 
