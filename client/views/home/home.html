@@ -1,15 +1,33 @@
 <template name="home">
+  <div class="surround">
+    <div class="jumbotron">
+      <div class="row center">
+        <h1>Answer That.</h1>
+        <h3>A new question to answer each day. Think and respond to the little, and the large, things.</h3>
+        <p>Signup with your email to get access now.</p>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+          <form role="form">
+            <div class="form-group">
+              <div class="input-group">
+                <!-- <label for="emailAddress">Email Address</label> -->
+                <input type="email" class="form-control" id="emailAddress" placeholder="Enter your email address">
+                <div class="input-group-btn">
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div class="container">
-  	<div class="row">
-  		<div class="col-md-6 col-md-offset-3">
-  			<form role="form">
-	  			<div class="form-group">
-	  				<label for="emailAddress">Email Address</label>
-	  				<input type="email" class="form-control" id="emailAddress" placeholder="Enter email">
-	  			</div>
-	  			<button type="submit" class="btn btn-default">Submit</button>
-	  		</form>
-  		</div>
-  	</div>
+    <div class="row">
+      <h1>Info</h1>
+    </div>
   </div>
 </template>
