@@ -9,6 +9,6 @@ Template.home.events {
 		e.preventDefault()
 
 		email = item.find('#emailAddress').value
-		Meteor.call 'signUp', email
-		Router.go 'successfulSignup'
+		Meteor.call 'signUp', email, (error, result) ->
+			Router.go 'successfulSignup'
 }

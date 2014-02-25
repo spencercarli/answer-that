@@ -6,7 +6,7 @@ Router.map ->
     path: '/dashboard'
 
   @route 'successfulSignup',
-    path: '/success'
+    path: '/successfulsignup'
 
   @route 'notFound',
     path: '*'
