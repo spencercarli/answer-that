@@ -22,4 +22,4 @@ setInterval(function(){
 		emailUsers(question.question);
 	}).run();
 
-}, 20000);
+}, 86400000);
