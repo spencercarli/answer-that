@@ -1,7 +1,8 @@
 Meteor.startup(function(){
 	if (Questions.find().count() === 0){
 		Accounts.createUser({
-			email: 'a@a.com'
+			email: 'a@a.com',
+			password: 'password'
 		});
 
 		Questions.insert({
