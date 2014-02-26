@@ -1,18 +1,17 @@
 <template name="dashboard">
-	{{> nav}}
+	{{#if currentUser}}
+		{{> nav}}
 
-	<div class="container">
-		{{> leftNav}}
-	</div>
-</template>
+		<div class="container">
+			<h2>Thanks for being a part of <em>Answer That</em>.</h2>
+			<p>We're working on more customizability but right now all we have is the ability to delete your account.</p>
 
-<template name="leftNav">
-	<div class="col-md-4 left-nav">
-		<h3>Features</h3>
-		<ul>
-			<li>User profile</li>
-			<li>Previously Sent Questions</li>
-			<li>Delivery options</li>
-		</ul>
-	</div>
+			<div class="alert alert-danger">
+				<p>To delete your account (and stop getting emails from us) click the button below. </p>
+				<button class="btn" id='delete'>Delete Account</button>
+			</div>
+		</div>
+	{{else}}
+		<h1>BAD</h1>
+	{{/if}}
 </template>
