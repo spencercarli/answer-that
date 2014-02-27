@@ -8,6 +8,9 @@ Router.map ->
   @route 'successfulSignup',
     path: '/successfulsignup'
 
+  @route 'admin',
+    path: '/admin'
+
   @route 'notFound',
     path: '*'
     where: 'server'

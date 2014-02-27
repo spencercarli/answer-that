@@ -3,6 +3,11 @@
 		{{> nav}}
 
 		<div class="container">
+			<!-- If the user is an admin give them access to an admin page -->
+			{{#if admin}}
+				<a href="{{pathFor 'admin'}}">Go to admin panel</a>
+			{{/if}}
+
 			<h2>Thanks for being a part of <em>Answer That</em>.</h2>
 			<p>We're working on more customizability but right now all we have is the ability to delete your account.</p>
 

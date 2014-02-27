@@ -1,6 +1,9 @@
 Template.dashboard.helpers {
 	currentUser: () ->
 		return Meteor.user()
+
+	admin: () ->
+		return Meteor.user().profile.admin
 }
 
 Template.dashboard.events {
