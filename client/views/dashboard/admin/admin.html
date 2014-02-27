@@ -1,7 +1,20 @@
 <template name="admin">
+	{{> nav}}
 	<div class="container">
 		{{#if admin}}
-			<p>You're in an admin's world.</p>
+			
+		<form role="form">
+			<div class="form-group">
+				<div class="input-group">
+					<label for="question">New Question</label>
+					<input type="text" class="form-control" id="question" placeholder="Enter the new question">
+					<div class="input-group-btn">
+						<button type="submit" class="btn btn-primary">Submit</button>
+					</div>
+				</div>
+			</div>
+		</form>
+
 		{{else}}
 			<p>You're a bad person.</p>
 		{{/if}}

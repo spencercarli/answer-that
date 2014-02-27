@@ -7,4 +7,10 @@ Meteor.methods {
 			subject: 'Unsubscribed from Answer That'
 			text: 'Sorry to see you go. If you ever want to get daily questions to answer again, sign up again at alsdkjf.com!'
 		}
+
+	addNewQuestion: (question) ->
+		Questions.insert {
+			question: question
+			submitted: new Date()
+		}
 }
