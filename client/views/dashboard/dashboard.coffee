@@ -6,6 +6,7 @@ Template.dashboard.helpers {
 Template.dashboard.events {
 	'click #delete': ->
 		# alert Meteor.user()._id
-		Meteor.call 'deleteUser', Meteor.user()._id
+		Meteor.call 'deleteUser', Meteor.user()
+
 		Router.go 'home'
 }
