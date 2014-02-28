@@ -15,6 +15,12 @@
 			</div>
 		</form>
 
+		<h3>15 Most Recent Questions</h3>
+		<ul>
+			{{#each recentQuestions}}
+				<li>{{this.question}}</li>
+			{{/each}}
+		</ul>
 		{{else}}
 			<p>You're a bad person.</p>
 		{{/if}}

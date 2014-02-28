@@ -10,6 +10,8 @@ Router.map ->
 
   @route 'admin',
     path: '/admin'
+    data: ->
+      Meteor.subscribe 'recentQuestions'
 
   @route 'notFound',
     path: '*'
