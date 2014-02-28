@@ -4,6 +4,19 @@ Router.map ->
 
   @route 'dashboard',
     path: '/dashboard'
+    before: ->
+      if Meteor.loggingIn()
+        return @stop()
+      if not Meteor.user()
+        @redirect '/'
+
+  @route 'changePassword',
+    path: '/dashboard/changePassword'
+    before: ->
+      if Meteor.loggingIn()
+        return @stop()
+      if not Meteor.user()
+        @redirect '/'
 
   @route 'admin',
     path: '/admin'
@@ -25,16 +38,3 @@ Router.map ->
     action: ->
       @response.statusCode = 404
       @response.end Handlebars.templates['404']()
-
-  mustBeSignedIn = ->
-    if not Meteor.user()
-      @redirect '/'
-
-  Router.before mustBeSignedIn,
-    except: [
-      "home"
-      "entrySignIn"
-      "entrySignUp"
-      "entryForgotPassword"
-      "entryResetPassword"
-    ]
