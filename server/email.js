@@ -13,6 +13,11 @@ emailUsers = function(question){
 }
 
 Meteor.setInterval(function(){
-	var question = Questions.findOne();
+	// Select some random question from the collection of questions
+	var rand = Math.random();
+	var question = Questions.findOne({random : { $gte : rand }});
+	if (question == null){
+		question = Question.findOne({random: {$lte : rand }});
+	}
 	emailUsers(question.question);
 }, 86400000);

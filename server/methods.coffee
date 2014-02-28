@@ -11,6 +11,7 @@ Meteor.methods {
 	addNewQuestion: (question) ->
 		Questions.insert {
 			question: question
-			submitted: new Date()
+			submitted: new Date(),
+			random: Math.random()
 		}
 }
