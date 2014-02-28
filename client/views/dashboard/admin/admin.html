@@ -1,7 +1,6 @@
 <template name="admin">
 	{{> nav}}
 	<div class="container">
-		{{#if admin}}
 			
 		<form role="form">
 			<div class="form-group">
@@ -21,8 +20,5 @@
 				<li>{{this.question}}</li>
 			{{/each}}
 		</ul>
-		{{else}}
-			<p>You're a bad person.</p>
-		{{/if}}
 	</div>
 </template>

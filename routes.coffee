@@ -12,6 +12,15 @@ Router.map ->
     path: '/admin'
     data: ->
       Meteor.subscribe 'recentQuestions'
+    before: ->
+      console.log Meteor.user()
+      if Meteor.loggingIn()
+        return @stop()
+      if Meteor.user().profile.admin
+        true
+      else
+        @redirect '/dashboard'
+        
 
   @route 'notFound',
     path: '*'

@@ -2,10 +2,6 @@ Deps.autorun ()->
 	Meteor.subscribe 'recentQuestions'
 
 Template.admin.helpers {
-	admin: ->
-		user = Meteor.user()
-		return true  if user.profile.admin  if user
-		false
 	recentQuestions: ->
 		Questions.find({}, {sort: {submitted: -1}})
 }
