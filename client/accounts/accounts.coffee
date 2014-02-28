@@ -7,3 +7,6 @@ Meteor.startup ->
     dashboardRoute: '/dashboard'
     language: 'en'
     showSignupCode: false
+
+Template.entrySignUp.rendered = ->
+  $('[type=email]').val(Session.get('email'))
