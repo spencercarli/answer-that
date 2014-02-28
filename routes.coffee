@@ -27,8 +27,6 @@ Router.map ->
       @response.end Handlebars.templates['404']()
 
   mustBeSignedIn = ->
-    if Meteor.loggingIn()
-      return @stop()
     if not Meteor.user()
       @redirect '/'
 
