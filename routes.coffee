@@ -5,9 +5,6 @@ Router.map ->
   @route 'dashboard',
     path: '/dashboard'
 
-  @route 'successfulSignup',
-    path: '/successfulsignup'
-
   @route 'admin',
     path: '/admin'
     data: ->
