@@ -29,17 +29,17 @@ Router.map ->
       @response.statusCode = 404
       @response.end Handlebars.templates['404']()
 
-  # mustBeSignedIn = ->
-  #   unless Meteor.user()
-  #     @render "home"
-  #     @stop()
-  #   return
+  mustBeSignedIn = ->
+    if Meteor.loggingIn()
+      return @stop()
+    if not Meteor.user()
+      @redirect '/'
 
-  # Router.before mustBeSignedIn,
-  #   except: [
-  #     "home"
-  #     "entrySignIn"
-  #     "entrySignUp"
-  #     "entryForgotPassword"
-  #     "entryResetPassword"
-  #   ]
+  Router.before mustBeSignedIn,
+    except: [
+      "home"
+      "entrySignIn"
+      "entrySignUp"
+      "entryForgotPassword"
+      "entryResetPassword"
+    ]

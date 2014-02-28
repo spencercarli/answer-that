@@ -1,22 +1,18 @@
 <template name="dashboard">
-	{{#if currentUser}}
-		{{> nav}}
+	{{> nav}}
 
-		<div class="container">
-			<!-- If the user is an admin give them access to an admin page -->
-			{{#if admin}}
-				<a href="{{pathFor 'admin'}}">Go to admin panel</a>
-			{{/if}}
+	<div class="container">
+		<!-- If the user is an admin give them access to an admin page -->
+		{{#if admin}}
+			<a href="{{pathFor 'admin'}}">Go to admin panel</a>
+		{{/if}}
 
-			<h2>Thanks for being a part of <em>Answer That</em>.</h2>
-			<p>We're working on more customizability but right now all we have is the ability to delete your account.</p>
+		<h2>Thanks for being a part of <em>Answer That</em>.</h2>
+		<p>We're working on more customizability but right now all we have is the ability to delete your account.</p>
 
-			<div class="alert alert-danger">
-				<p>To delete your account (and stop getting emails from us) click the button below. </p>
-				<button class="btn" id='delete'>Delete Account</button>
-			</div>
+		<div class="alert alert-danger">
+			<p>To delete your account (and stop getting emails from us) click the button below. </p>
+			<button class="btn" id='delete'>Delete Account</button>
 		</div>
-	{{else}}
-		<h1>BAD</h1>
-	{{/if}}
+	</div>
 </template>
