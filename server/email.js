@@ -12,14 +12,7 @@ emailUsers = function(question){
 	});
 }
 
-Fiber = Npm.require('fibers');
-
-// At a specific interval, email all the users a question
-setInterval(function(){
-
-	Fiber(function(){
-		var question = Questions.findOne();
-		emailUsers(question.question);
-	}).run();
-
+Meteor.setInterval(function(){
+	var question = Questions.findOne();
+	emailUsers(question.question);
 }, 86400000);
