@@ -1,35 +1,37 @@
 <template name="admin">
-	{{> nav}}
-	<div class="container">
-			
-		<form role="form">
-			<div class="form-group">
-				<label for="question">New Question</label>
-				<div class="input-group">					
-					<input type="text" class="form-control" id="question" placeholder="Enter the new question">
-					<div class="input-group-btn">
-						<button type="submit" class="btn btn-primary">Submit</button>
+	<div class="admin">
+		{{> nav}}
+		<div class="container">
+				
+			<form role="form">
+				<div class="form-group">
+					<label for="question">New Question</label>
+					<div class="input-group">					
+						<input type="text" class="form-control" id="question" placeholder="Enter the new question">
+						<div class="input-group-btn">
+							<button type="submit" class="btn btn-primary">Submit</button>
+						</div>
 					</div>
 				</div>
-			</div>
-		</form>
+			</form>
 
-		<h3>15 Most Recently Added Questions</h3>
-		<ul>
-			{{#each recentQuestions}}
-				<li>{{this.question}}</li>
-			{{/each}}
-		</ul>
+			<h3>15 Most Recently Added Questions</h3>
+			<ul>
+				{{#each recentQuestions}}
+					<li>{{this.question}}</li>
+				{{/each}}
+			</ul>
 
-		<h3>Messages to be Approved</h3>
-		<ul>
-			{{#each messagesToBeApproved}}
-				<li class="well">
-					{{this.question}}
-					<button class="btn btn-danger pull-right deny">Deny</button>
-					<button class="btn btn-primary pull-right approve">Approve</button>
-				</li>
-			{{/each}}
-		</ul>
+			<h3>Messages to be Approved</h3>
+			<ul class="needApprove">
+				{{#each messagesToBeApproved}}
+					<li class="well">
+						{{this.question}}
+						<button class="btn btn-danger pull-right deny">Deny</button>
+						<button class="btn btn-primary pull-right approve">Approve</button>
+					</li>
+				{{/each}}
+			</ul>
+		</div>
 	</div>
 </template>
