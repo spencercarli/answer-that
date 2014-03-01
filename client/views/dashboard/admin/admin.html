@@ -20,5 +20,16 @@
 				<li>{{this.question}}</li>
 			{{/each}}
 		</ul>
+
+		<h3>Messages to be Approved</h3>
+		<ul>
+			{{#each messagesToBeApproved}}
+				<li class="well">
+					{{this.question}}
+					<button class="btn btn-danger pull-right deny">Deny</button>
+					<button class="btn btn-primary pull-right approve">Approve</button>
+				</li>
+			{{/each}}
+		</ul>
 	</div>
 </template>

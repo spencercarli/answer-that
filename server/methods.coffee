@@ -8,11 +8,22 @@ Meteor.methods {
 			text: 'Sorry to see you go. If you ever want to get daily questions to answer again, sign up again at alsdkjf.com!'
 		}
 
-	addNewQuestion: (question) ->
+	addNewQuestionFromAdmin: (question) ->
 		Questions.insert {
 			question: question
 			submitted: new Date(),
 			random: Math.random(), 
-			sent: false
+			sent: false,
+			approved: true
 		}
+
+	approveQuestion: (question) ->
+		Questions.update question, {
+				$set: {
+					approved: true
+				}
+			}
+
+	denyQuestion: (question) ->
+		Questions.remove question
 }
