@@ -1,6 +1,3 @@
-Deps.autorun ()->
-	Meteor.subscribe 'recentQuestions'
-
 Template.admin.helpers {
 	recentQuestions: ->
 		Questions.find({ approved:true }, {sort: {submitted: -1}})
