@@ -12,4 +12,11 @@ Template.dashboard.events {
 		Meteor.call 'deleteUser', Meteor.user()
 
 		Router.go 'home'
+
+	'submit form': (e, target) ->
+		e.preventDefault()
+
+		question = target.find('#question')
+		Meteor.call 'addNewQuestionFromUser', question.value
+		question.value = ""
 }

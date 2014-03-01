@@ -10,6 +10,20 @@
 		<h2>Thanks for being a part of <em>Answer That</em>.</h2>
 		<p>We're working on more customizability. All that's available is below.</p>
 
+		<div class="well">
+			<p>Have a question you want to share? Add it below.</p>
+			<form role="form">
+				<div class="form-group">
+					<div class="input-group">
+						<input type="text" class="form-control" id="question" placeholder="Enter your question">
+						<div class="input-group-btn">
+							<button type="submit" class="btn btn-primary">Submit</button>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+
 		<div class="alert alert-warning">
 			<p>To change your password click the button below.</p>
 			<a href="{{pathFor 'changePassword'}}" class="btn btn-default">Change Password</a>

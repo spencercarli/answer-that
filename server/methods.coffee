@@ -17,6 +17,15 @@ Meteor.methods {
 			approved: true
 		}
 
+	addNewQuestionFromUser: (question) ->
+		Questions.insert {
+			question: question
+			submitted: new Date(),
+			random: Math.random(), 
+			sent: false,
+			approved: false
+		}
+
 	approveQuestion: (question) ->
 		Questions.update question, {
 				$set: {
