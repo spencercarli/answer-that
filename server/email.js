@@ -17,11 +17,11 @@ Meteor.setInterval(function(){
 	// Select some random question from the collection of questions
 	var rand = Math.random();
 	var qFound = true;
-	var question = Questions.findOne({sent: false, random : { $gte : rand }});
+	var question = Questions.findOne({sent: false, approved: true, random : { $gte : rand }});
 
 	// If there are no questions with a random number greater than rand then check for less than
 	if (question == null){
-		question = Questions.findOne({sent: false, random: {$lte : rand }});
+		question = Questions.findOne({sent: false, approved: true, random: {$lte : rand }});
 	}
 	// If there are no questions left that haven't already been sent
 	if (question == null){
