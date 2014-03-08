@@ -9,9 +9,11 @@ Template.dashboard.helpers {
 Template.dashboard.events {
 	'click #delete': ->
 		# alert Meteor.user()._id
-		Meteor.call 'deleteUser', Meteor.user()
-
-		Router.go 'home'
+		del = confirm 'Are you sure you want to delete your account?'
+		if del
+			Meteor.call 'deleteUser', Meteor.user()
+			Router.go 'home'
+		
 
 	'submit form': (e, target) ->
 		e.preventDefault()
