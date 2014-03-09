@@ -1,11 +1,22 @@
 <template name="nav">
 	<nav class="navbar navbar-default" role="navigation">
 		<div class="container">
-			<a class="navbar-brand">Answer That.</a>
+			<a href="/" class="navbar-brand">Answer That.</a>
+
+
 			<ul class="nav navbar-nav pull-right">
+				{{#if currentUser}}
 				<li>
 					<a href="/sign-out">Sign Out</a>
 				</li>
+				{{else}}
+				<li>
+					<a href="/sign-up">Sign Up</a>
+				</li>
+				<li>
+					<a href="/sign-in">Sign In</a>
+				</li>
+				{{/if}}
 			</ul>
 		</div>
 	</nav>
