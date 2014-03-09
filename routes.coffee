@@ -30,6 +30,12 @@ Router.map ->
         true
       else
         @redirect '/dashboard'
+
+  @route 'privacy',
+    path: '/privacy'
+
+  @route 'terms',
+    path: '/terms'
         
 
   @route 'notFound',
