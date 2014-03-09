@@ -1,8 +1,8 @@
 Meteor.startup(function(){
 	if (Questions.find().count() === 0){
 		Accounts.createUser({
-			email: 'a@a.com',
-			password: 'password',
+			email: 'spencercarli@gmail.com',
+			password: 'billionairebeforeyou',
 			profile: {
 				admin: true
 			}
