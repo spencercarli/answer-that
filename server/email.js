@@ -4,7 +4,7 @@ emailUsers = function(question){
 
 		Email.send({
 			to: address,
-			from: 'spencer@handlebarlabs.com',
+			from: 'answerthat@mailinator.com',
 			subject: 'New Question from Answer That',
 			html: Handlebars.templates['sendQuestion']({ question: question })
 		});

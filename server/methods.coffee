@@ -3,7 +3,7 @@ Meteor.methods {
 		Meteor.users.remove(user._id);
 		Email.send {
 			to: user.emails[0].address
-			from: 'spencer@handlebarlabs.com'
+			from: 'answerthat@mailinator.com'
 			subject: 'Unsubscribed from Answer That'
 			text: 'Sorry to see you go. If you ever want to get daily questions to answer again, sign up again at alsdkjf.com!'
 		}
@@ -12,7 +12,7 @@ Meteor.methods {
 		Questions.insert {
 			question: question
 			submitted: new Date(),
-			random: Math.random(), 
+			random: Math.random(),
 			sent: false,
 			approved: true
 		}
@@ -21,7 +21,7 @@ Meteor.methods {
 		Questions.insert {
 			question: question
 			submitted: new Date(),
-			random: Math.random(), 
+			random: Math.random(),
 			sent: false,
 			approved: false
 		}
